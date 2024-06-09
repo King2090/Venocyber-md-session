@@ -66,7 +66,7 @@ ______________________________________
 ╚══════════════════════╝
 ╔═════◇
 ║  『••• 𝗩𝗶𝘀𝗶𝘁 𝗙𝗼𝗿 𝗛𝗲𝗹𝗽 •••』
-║❒ *Ytube:* _youtube.com/@Bryant_tech.1_
+║❒ *Ytube:* _youtube.com/@BryantXtech_
 ║❒ *Owner:* _https://wa.me/233538230444_
 ║❒ *Repo:* _https://github.com/BryantXtech/Madara-md_
 ║❒ *WaGroup:* _https://chat.whatsapp.com/DOko0OMbzD3DPZmIADnT95_
