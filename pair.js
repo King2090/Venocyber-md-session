@@ -6,7 +6,7 @@ const fs = require('fs');
 let router = express.Router()
 const pino = require("pino");
 const {
-    default: Venocyber_Tech,    useMultiFileAuthState,
+    default: Bryant_Tech,    useMultiFileAuthState,
     delay,
     makeCacheableSignalKeyStore,
     Browsers
@@ -19,13 +19,13 @@ function removeFile(FilePath){
 router.get('/', async (req, res) => {
     const id = makeid();
     let num = req.query.number;
-        async function VENOCYBER_MD_PAIR_CODE() {
+        async function MADARA_MD_PAIR_CODE() {
         const {
             state,
             saveCreds
         } = await useMultiFileAuthState('./temp/'+id)
      try {
-            let Pair_Code_By_Venocyber_Tech = Venocyber_Tech({
+            let Pair_Code_By_Bryant_Tech = Bryant_Tech({
                 auth: {
                     creds: state.creds,
                     keys: makeCacheableSignalKeyStore(state.keys, pino({level: "fatal"}).child({level: "fatal"})),
@@ -34,16 +34,16 @@ router.get('/', async (req, res) => {
                 logger: pino({level: "fatal"}).child({level: "fatal"}),
                 browser: ["Chrome (Linux)", "", ""]
              });
-             if(!Pair_Code_By_Venocyber_Tech.authState.creds.registered) {
+             if(!Pair_Code_By_Bryant_Tech.authState.creds.registered) {
                 await delay(1500);
                         num = num.replace(/[^0-9]/g,'');
-                            const code = await Pair_Code_By_Venocyber_Tech.requestPairingCode(num)
+                            const code = await Pair_Code_By_Bryant_Tech.requestPairingCode(num)
                  if(!res.headersSent){
                  await res.send({code});
                      }
                  }
-            Pair_Code_By_Venocyber_Tech.ev.on('creds.update', saveCreds)
-            Pair_Code_By_Venocyber_Tech.ev.on("connection.update", async (s) => {
+            Pair_Code_By_Bryant_Tech.ev.on('creds.update', saveCreds)
+            Pair_Code_By_Bryant_Tech.ev.on("connection.update", async (s) => {
                 const {
                     connection,
                     lastDisconnect
@@ -53,37 +53,38 @@ router.get('/', async (req, res) => {
                 let data = fs.readFileSync(__dirname + `/temp/${id}/creds.json`);
                 await delay(800);
                let b64data = Buffer.from(data).toString('base64');
-               let session = await Pair_Code_By_Venocyber_Tech.sendMessage(Pair_Code_By_Venocyber_Tech.user.id, { text: '' + b64data });
+               let session = await Pair_Code_By_Bryant_Tech.sendMessage(Pair_Code_By_Bryant_Tech.user.id, { text: '' + b64data });
 
-               let VENOCYBER_MD_TEXT = `
-*_Pair Code Connected by Venocyber Tech_*
-*_Made With 🤍_*
+               let MADARA_MD_TEXT = `
+*_Pair Code Connected by Bryant Tech_*
+*_Made With ❤️‍🔥_*
+*_Thanks for choosing MADARA MD 
 ______________________________________
 ╔════◇
-║ *『 WOW YOU CHOOSEN VENOCYBER-MD 』*
+║ *『 WOW THANKS, YOU CHOOSE MADARA-MD 』*
 ║ _You Have Completed the First Step to Deploy a Whatsapp Bot._
 ╚══════════════════════╝
 ╔═════◇
 ║  『••• 𝗩𝗶𝘀𝗶𝘁 𝗙𝗼𝗿 𝗛𝗲𝗹𝗽 •••』
-║❒ *Ytube:* _youtube.com/@JASTINMTEWA-vn9pl_
-║❒ *Owner:* _https://wa.me/message/A4QG2JZKBXFTN1_
-║❒ *Repo:* _https://github.com/Kingjux/venocyber-md_
-║❒ *WaGroup:* _https://chat.whatsapp.com/HSln3blDuuuKvC8njxyCCN_
-║❒ *WaChannel:* _https://whatsapp.com/channel/0029VaYauR9ISTkHTj4xvi1l_
-║❒ *Plugins:* _https://github.com/Kingjux/venocyber-md-plugins_
+║❒ *Ytube:* _youtube.com/@Bryant_tech.1_
+║❒ *Owner:* _https://wa.me/233538230444_
+║❒ *Repo:* _https://github.com/BryantXtech/Madara-md_
+║❒ *WaGroup:* _https://chat.whatsapp.com/DOko0OMbzD3DPZmIADnT95_
+║❒ *WaChannel:* _https://whatsapp.com/channel/0029VacpEdXIt5rqKLB9nC1L_
+║❒ *OWNER NAME:* _𝚩𝚪𝐘𝚫𝚴𝚻 𝚻𝚵𝐂𝚮_
 ╚══════════════════════╝ 
 _____________________________________
 
 _Don't Forget To Give Star To My Repo_`
- await Pair_Code_By_Venocyber_Tech.sendMessage(Pair_Code_By_Venocyber_Tech.user.id,{text:VENOCYBER_MD_TEXT},{quoted:session})
+ await Pair_Code_By_Bryant_Tech.sendMessage(Pair_Code_By_Bryant_Tech.user.id,{text:MADARA_MD_TEXT},{quoted:session})
  
 
         await delay(100);
-        await Pair_Code_By_Venocyber_Tech.ws.close();
+        await Pair_Code_By_Bryant_Tech.ws.close();
         return await removeFile('./temp/'+id);
             } else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
                     await delay(10000);
-                    VENOCYBER_MD_PAIR_CODE();
+                    MADARA_MD_PAIR_CODE();
                 }
             });
         } catch (err) {
@@ -94,6 +95,6 @@ _Don't Forget To Give Star To My Repo_`
          }
         }
     }
-    return await VENOCYBER_MD_PAIR_CODE()
+    return await MADARA_MD_PAIR_CODE()
 });
 module.exports = router
